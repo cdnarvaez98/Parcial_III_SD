@@ -1,7 +1,6 @@
 package co.edu.unicauca.distribuidos.core.controllers;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,18 +20,23 @@ public class ClienteRestControllers {
     @Autowired
     private ICompraService compraService;
 
-    @GetMapping ("/compras/{idPersona}")
-    public ArrayList<Compra> listarCompras(@PathVariable Integer idCompra){
+    @GetMapping ("/compras/{idCompra}")
+    public ArrayList<Compra> listarComprasPorId(@PathVariable Integer idCompra){
         ArrayList<Compra> objCompra = null;
         objCompra = compraService.listarCompras(idCompra);
         return objCompra;
     }
 
-    @PostMapping ("compras/{}")
-    public Compra registrarCompra(@RequestBody Compra compra, @PathVariable Integer idCompra){
-        Compra objCompra = null;
-        objCompra = compraService.registrarCompra(idCompra, compra);
-        return objCompra;
+    @PostMapping ("/compras/{idCompra}")
+    public Compra registrarCompra(@RequestBody Compra objCompra, @PathVariable Integer idCompra) {
+        Compra compra = null;
+        compra = compraService.registrarCompra(idCompra, objCompra);
+        return compra;
     } 
+
+    @GetMapping ("/compras")
+    public ArrayList<Compra> listarCompras(){
+        return compraService.listarCompras();
+    }
 
 }

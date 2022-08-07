@@ -29,7 +29,7 @@ public class CompraRepository {
         } else {
             listaCompraTemp = new ArrayList<>();
             listaCompraTemp.add(objRegistrarCompra);
-            if (mapaCompra.put(idCompra, listaCompraTemp) != null) {
+            if (mapaCompra.put(idCompra, listaCompraTemp) == null) {
                 System.out.println("Nueva compra registrada");
                 objCompra = objRegistrarCompra;
             }
@@ -42,6 +42,10 @@ public class CompraRepository {
             return mapaCompra.get(id);
         }
         return null;
+    }
+
+    public ArrayList<Compra> listarCompras() {
+        return this.mapaCompra.get(1);
     }
 
     private void cargarCompra(){

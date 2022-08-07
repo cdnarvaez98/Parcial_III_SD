@@ -16,12 +16,17 @@ public class CompraServiceImpl implements ICompraService {
 
     @Override
     public Compra registrarCompra(Integer idCompra, Compra objRegistrarCompra) {
-        return servicioAccesoDatos.registrarCompra(idCompra, objRegistrarCompra);
+        return this.servicioAccesoDatos.registrarCompra(idCompra, objRegistrarCompra);
     }
 
     @Override
     public ArrayList<Compra> listarCompras(Integer id) {
-        return servicioAccesoDatos.listarComprasPorId(id);
+        return this.servicioAccesoDatos.listarComprasPorId(id);
+    }
+
+    @Override
+    public ArrayList<Compra> listarCompras() {
+        return this.servicioAccesoDatos.listarCompras();
     }
     
 }
