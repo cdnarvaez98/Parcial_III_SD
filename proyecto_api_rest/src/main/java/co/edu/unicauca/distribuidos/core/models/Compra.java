@@ -2,6 +2,8 @@ package co.edu.unicauca.distribuidos.core.models;
 
 import java.time.LocalDateTime;
 
+/*Clase compra y sus atributos */
+
 public class Compra {
     private int numIdPersona;
     private String tipoIdPersona;
@@ -10,7 +12,6 @@ public class Compra {
     private LocalDateTime fechaHoraCompra;
 
     public Compra() {
-        // Constructor de la clase
     }
 
     public Compra(int numIdPersona, String tipoIdPersona, double valorCompra, String lugarCompra,

@@ -8,9 +8,22 @@ import org.springframework.stereotype.Service;
 import co.edu.unicauca.distribuidos.core.models.Compra;
 import co.edu.unicauca.distribuidos.core.repositories.CompraRepository;
 
+/*
+ * Clase CompraServiseImpl que implemnta la interface ICompraService
+ * Se implementan los métodos registrar compra y listas compras
+ */
+
+/*
+ * @Service permite que spring cree automaticamente objetos
+ * de una clase
+ */
 @Service
 public class CompraServiceImpl implements ICompraService {
 
+    /*
+     * La notación @Autowired hace que spring cree automáticamente un objeto de
+     * la clase compraRepository
+     */
     @Autowired
     private CompraRepository servicioAccesoDatos;
 
@@ -28,5 +41,5 @@ public class CompraServiceImpl implements ICompraService {
     public ArrayList<Compra> listarCompras() {
         return this.servicioAccesoDatos.listarCompras();
     }
-    
+
 }

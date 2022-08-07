@@ -13,29 +13,69 @@ import org.springframework.web.bind.annotation.RestController;
 import co.edu.unicauca.distribuidos.core.models.Compra;
 import co.edu.unicauca.distribuidos.core.services.ICompraService;
 
+/**
+ * La anotación @RestController indica que los métodos del controlador serán
+ * servicios que siguen el modelo REST.
+ */
 @RestController
+/*
+ * La anotación @RequestMapping indica que las rutas para acceder a los
+ * servicios
+ * que siguen el modelo REST deben tener el prefijo api.
+ */
 @RequestMapping("/api")
 public class ClienteRestControllers {
-    
+
+    /*
+     * La notación @Autowired hace que spring cree automáticamente un objeto de
+     * la clase que implementa la interface ICompraService
+     */
     @Autowired
     private ICompraService compraService;
 
-    @GetMapping ("/compras/{idCompra}")
-    public ArrayList<Compra> listarComprasPorId(@PathVariable Integer idCompra){
+    /*
+     * La anotación @GetMapping asocia un método con un servicio
+     * REST que recive peticiones mediante el verbo GET
+     * 
+     * La ruta /compras permite aceder al servicio web que retorna
+     * la lista de compras
+     * 
+     * El método utiliza el objeto inyectado el cual
+     * permite el acceso al medio de persistencia
+     */
+    @GetMapping("/compras/{idCompra}")
+    public ArrayList<Compra> listarComprasPorId(@PathVariable Integer idCompra) {
         ArrayList<Compra> objCompra = null;
+
         objCompra = compraService.listarCompras(idCompra);
         return objCompra;
     }
 
-    @PostMapping ("/compras/{idCompra}")
+    /*
+     * La anotación @PostMapping asocia un método con un servicio
+     * REST que recive peticiones mediante el verbo POST
+     * 
+     * La ruta /compras permite aceder al servicio web que retorna
+     * la lista de compras
+     * 
+     * La anotación @RequestBody asocia el parámetro de un método con los datos
+     * almacenados en el cuerpo de la petición.
+     * 
+     * La anotación @PathVariable asocia el parámetro de un método con el
+     * parámetro de la URL
+     * 
+     * El método utiliza el objeto inyectado (compraService) el cual
+     * permite el acceso al medio de persistencia
+     */
+    @PostMapping("/compras/{idCompra}")
     public Compra registrarCompra(@RequestBody Compra objCompra, @PathVariable Integer idCompra) {
         Compra compra = null;
         compra = compraService.registrarCompra(idCompra, objCompra);
         return compra;
-    } 
+    }
 
-    @GetMapping ("/compras")
-    public ArrayList<Compra> listarCompras(){
+    @GetMapping("/compras")
+    public ArrayList<Compra> listarCompras() {
         return compraService.listarCompras();
     }
 

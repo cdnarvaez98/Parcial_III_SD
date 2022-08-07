@@ -7,8 +7,22 @@ import java.util.HashMap;
 import org.springframework.stereotype.Service;
 
 import co.edu.unicauca.distribuidos.core.models.Compra;
+/*
+ * El signo @ indica al compilador que lo que sigue
+ * es una anotación
+ */
 
+/*
+ * @Service permite que spring cree automaticamente objetos
+ * de una clase
+ */
 @Service
+
+/*
+ * En la clase CompraRepository se crean los métodos:
+ * para registrar una compra y para listar las mismas de un cliente en
+ * particular.
+ */
 public class CompraRepository {
 
     private HashMap<Integer, ArrayList<Compra>> mapaCompra;
@@ -38,7 +52,7 @@ public class CompraRepository {
     }
 
     public ArrayList<Compra> listarComprasPorId(Integer id) {
-        if(this.mapaCompra.get(id) != null) {
+        if (this.mapaCompra.get(id) != null) {
             return mapaCompra.get(id);
         }
         return null;
@@ -48,7 +62,7 @@ public class CompraRepository {
         return this.mapaCompra.get(1);
     }
 
-    private void cargarCompra(){
+    private void cargarCompra() {
 
         ArrayList<Compra> listC = new ArrayList<>();
         Compra objCompra1 = new Compra(1, "CC", 4000000, "Medellin", LocalDateTime.now());
