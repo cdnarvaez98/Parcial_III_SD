@@ -2,6 +2,10 @@ package co.edu.unicauca.distribuidos.cliente_empresa.models;
 
 import java.time.LocalDateTime;
 
+/*
+ * Clase Compra encapsula los datos que 
+ * viajan entre el cliente y servidor
+ */
 public class Compra {
     private int numIdPersona;
     private String tipoIdPersona;
