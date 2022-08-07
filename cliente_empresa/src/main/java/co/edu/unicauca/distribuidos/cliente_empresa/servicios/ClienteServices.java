@@ -24,17 +24,17 @@ public class ClienteServices {
         this.objClientePeticiones = ClientBuilder.newClient().register(new JacksonFeature());
     }
 
-    public List<Compra> consultarCompra(Integer id) {
+    public List<Compra> consultarCompras(Integer id) {
         List<Compra> listaCompra = null;
         WebTarget target = this.objClientePeticiones.target(this.endPoint+"/"+id);
-        Builder objPeticion = target.request(MediaType.APPLICATION_JSON_TYPE);
+        Builder objPeticion = target.request(MediaType.APPLICATION_JSON);
         listaCompra = objPeticion.get(new GenericType<List<Compra>>() {});
         return listaCompra;
     }
 
-    public Compra registrarCompra(Compra objCompraRegistrar) {
+    public Compra registrarCompra(Compra objCompraRegistrar, Integer id) {
         Compra objCompra = null;
-        WebTarget target = this.objClientePeticiones.target(this.endPoint);
+        WebTarget target = this.objClientePeticiones.target(this.endPoint+"/"+id);
         Entity<Compra> data = Entity.entity(objCompraRegistrar, MediaType.APPLICATION_JSON_TYPE);
         Builder objPeticion = target.request(MediaType.APPLICATION_JSON_TYPE);
         objCompra = objPeticion.post(data, Compra.class);
