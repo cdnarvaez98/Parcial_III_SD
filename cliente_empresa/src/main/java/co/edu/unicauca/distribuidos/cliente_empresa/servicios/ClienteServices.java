@@ -1,7 +1,5 @@
 package co.edu.unicauca.distribuidos.cliente_empresa.servicios;
 
-import java.util.List;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -47,7 +45,7 @@ public class ClienteServices {
      * @return listaCompra
      */
 
-    public ArrayList<Compra> consultarCompras(Integer id) {
+    public ArrayList<Compra> consultarCompras(String id) {
         ArrayList<Compra> listaCompra = null;
         /*
          * En la variable target se almacena el objetivo
@@ -75,13 +73,13 @@ public class ClienteServices {
      * @return objCompra
      */
 
-    public Compra registrarCompra(Compra objCompraRegistrar, Integer id) {
+    public Compra registrarCompra(Compra objCompraRegistrar, String idCompra) {
         Compra objCompra = null;
         /*
          * El objeto de tipo WebTarget contiene el objetivo por
          * el cual se realizan las peticiones
          */
-        WebTarget target = this.objClientePeticiones.target(this.endPoint + "/" + id);
+        WebTarget target = this.objClientePeticiones.target(this.endPoint + "/" + idCompra);
         /*
          * El método Entity define la información que ira en el cuerpo
          * de la petición y el formato de la información

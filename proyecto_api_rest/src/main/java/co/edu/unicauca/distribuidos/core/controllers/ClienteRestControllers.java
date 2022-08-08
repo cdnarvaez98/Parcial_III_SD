@@ -44,7 +44,7 @@ public class ClienteRestControllers {
      * permite el acceso al medio de persistencia
      */
     @GetMapping("/compras/{idCompra}")
-    public ArrayList<Compra> listarComprasPorId(@PathVariable Integer idCompra) {
+    public ArrayList<Compra> listarComprasPorId(@PathVariable String idCompra) {
         ArrayList<Compra> objCompra = null;
 
         objCompra = compraService.listarCompras(idCompra);
@@ -68,7 +68,7 @@ public class ClienteRestControllers {
      * permite el acceso al medio de persistencia
      */
     @PostMapping("/compras/{idCompra}")
-    public Compra registrarCompra(@RequestBody Compra objCompra, @PathVariable Integer idCompra) {
+    public Compra registrarCompra(@RequestBody Compra objCompra, @PathVariable String idCompra) {
         Compra compra = null;
         compra = compraService.registrarCompra(idCompra, objCompra);
         return compra;

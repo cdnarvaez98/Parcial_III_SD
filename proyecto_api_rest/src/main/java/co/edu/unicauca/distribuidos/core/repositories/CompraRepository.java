@@ -26,7 +26,7 @@ import co.edu.unicauca.distribuidos.core.models.Compra;
  */
 public class CompraRepository {
 
-    private HashMap<Integer, ArrayList<Compra>> mapaCompra;
+    private HashMap<String, ArrayList<Compra>> mapaCompra;
     private ArrayList<Compra> listaCompraTemp = null;
 
     public CompraRepository() {
@@ -34,7 +34,7 @@ public class CompraRepository {
         cargarCompra();
     }
 
-    public Compra registrarCompra(Integer idCompra, Compra objRegistrarCompra) {
+    public Compra registrarCompra(String idCompra, Compra objRegistrarCompra) {
         Compra objCompra = null;
         if (this.mapaCompra.get(idCompra) != null) {
             if (this.mapaCompra.get(idCompra).add(objRegistrarCompra)) {
@@ -52,7 +52,7 @@ public class CompraRepository {
         return objCompra;
     }
 
-    public ArrayList<Compra> listarComprasPorId(Integer id) {
+    public ArrayList<Compra> listarComprasPorId(String id) {
         if (this.mapaCompra.get(id) != null) {
             return mapaCompra.get(id);
         }
@@ -60,20 +60,20 @@ public class CompraRepository {
     }
 
     public ArrayList<Compra> listarCompras() {
-        return this.mapaCompra.get(1);
+        return this.mapaCompra.get("1-CC");
     }
 
     private void cargarCompra() {
 
         ArrayList<Compra> listC = new ArrayList<>();
-        LocalDateTime fechaHoraActual = LocalDateTime.now();
+        LocalDateTime fecha = LocalDateTime.now();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String fecha = fechaHoraActual.format(formato);
-        Compra objCompra1 = new Compra(1, "CC", 4000000, "Medellin", fecha);
-        Compra objCompra2 = new Compra(2, "CE", 12000000, "Cali", fecha);
+        String fechaHoraActual = fecha.format(formato);
+        Compra objCompra1 = new Compra(4000000, "Medellin", fechaHoraActual);
+        Compra objCompra2 = new Compra(12000000, "Cali", fechaHoraActual);
 
         listC.add(objCompra1);
         listC.add(objCompra2);
-        mapaCompra.put(1, listC);
+        mapaCompra.put("1-CC", listC);
     }
 }

@@ -28,12 +28,12 @@ public class CompraServiceImpl implements ICompraService {
     private CompraRepository servicioAccesoDatos;
 
     @Override
-    public Compra registrarCompra(Integer idCompra, Compra objRegistrarCompra) {
+    public Compra registrarCompra(String idCompra, Compra objRegistrarCompra) {
         return this.servicioAccesoDatos.registrarCompra(idCompra, objRegistrarCompra);
     }
 
     @Override
-    public ArrayList<Compra> listarCompras(Integer id) {
+    public ArrayList<Compra> listarCompras(String id) {
         return this.servicioAccesoDatos.listarComprasPorId(id);
     }
 

@@ -6,8 +6,6 @@ package co.edu.unicauca.distribuidos.cliente_empresa.models;
  */
 
 public class Compra {
-    private int numIdPersona;
-    private String tipoIdPersona;
     private double valorCompra;
     private String lugarCompra;
     private String fechaHoraCompra;
@@ -16,28 +14,10 @@ public class Compra {
         // Constructor de la clase
     }
 
-    public Compra(int numIdPersona, String tipoIdPersona, double valorCompra, String lugarCompra, String fechaHoraCompra) {
-        this.numIdPersona = numIdPersona;
-        this.tipoIdPersona = tipoIdPersona;
+    public Compra(double valorCompra, String lugarCompra, String fechaHoraCompra) {
         this.valorCompra = valorCompra;
         this.lugarCompra = lugarCompra;
         this.fechaHoraCompra = fechaHoraCompra;
-    }
-
-    public int getNumIdPersona() {
-        return numIdPersona;
-    }
-
-    public void setNumIdPersona(int numIdPersona) {
-        this.numIdPersona = numIdPersona;
-    }
-
-    public String getTipoIdPersona() {
-        return tipoIdPersona;
-    }
-
-    public void setTipoIdPersona(String tipoIdPersona) {
-        this.tipoIdPersona = tipoIdPersona;
     }
 
     public double getValorCompra() {
