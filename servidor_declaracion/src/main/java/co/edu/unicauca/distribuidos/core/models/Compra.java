@@ -1,9 +1,6 @@
-package co.edu.unicauca.distribuidos.cliente_empresa.models;
+package co.edu.unicauca.distribuidos.core.models;
 
-/*
- * Clase Compra encapsula los datos que 
- * viajan entre el cliente y servidor
- */
+/*Clase compra y sus atributos */
 
 public class Compra {
     private int valorCompra;

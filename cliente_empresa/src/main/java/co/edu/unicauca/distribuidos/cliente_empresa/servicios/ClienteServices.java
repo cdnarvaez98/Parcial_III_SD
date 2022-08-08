@@ -45,13 +45,13 @@ public class ClienteServices {
      * @return listaCompra
      */
 
-    public ArrayList<Compra> consultarCompras(String id) {
+    public ArrayList<Compra> consultarCompras(String idPersona) {
         ArrayList<Compra> listaCompra = null;
         /*
          * En la variable target se almacena el objetivo
          * al cual se le envian las peticiones (ruta al servicio REST)
          */
-        WebTarget target = this.objClientePeticiones.target(this.endPoint + "/" + id);
+        WebTarget target = this.objClientePeticiones.target(this.endPoint + "/" + idPersona);
         /*
          * Contrucción de petición y definición del tipo de formato
          * aceptado como rta
@@ -73,13 +73,13 @@ public class ClienteServices {
      * @return objCompra
      */
 
-    public Compra registrarCompra(Compra objCompraRegistrar, String idCompra) {
+    public Compra registrarCompra(Compra objCompraRegistrar, String idPersona) {
         Compra objCompra = null;
         /*
          * El objeto de tipo WebTarget contiene el objetivo por
          * el cual se realizan las peticiones
          */
-        WebTarget target = this.objClientePeticiones.target(this.endPoint + "/" + idCompra);
+        WebTarget target = this.objClientePeticiones.target(this.endPoint + "/" + idPersona);
         /*
          * El método Entity define la información que ira en el cuerpo
          * de la petición y el formato de la información
