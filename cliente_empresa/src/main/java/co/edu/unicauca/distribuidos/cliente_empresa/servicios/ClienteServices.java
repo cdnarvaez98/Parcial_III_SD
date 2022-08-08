@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
 import co.edu.unicauca.distribuidos.cliente_empresa.models.Compra;
+import java.util.ArrayList;
 
 public class ClienteServices {
     /**
@@ -46,8 +47,8 @@ public class ClienteServices {
      * @return listaCompra
      */
 
-    public List<Compra> consultarCompras(Integer id) {
-        List<Compra> listaCompra = null;
+    public ArrayList<Compra> consultarCompras(Integer id) {
+        ArrayList<Compra> listaCompra = null;
         /*
          * En la variable target se almacena el objetivo
          * al cual se le envian las peticiones (ruta al servicio REST)
@@ -63,8 +64,7 @@ public class ClienteServices {
          * de la clase que utiliza la aplicación para la conversión de la rta del
          * servidor a JSON
          */
-        listaCompra = objPeticion.get(new GenericType<List<Compra>>() {
-        });
+        listaCompra = objPeticion.get(new GenericType<ArrayList<Compra>>() {});
         return listaCompra;
     }
 

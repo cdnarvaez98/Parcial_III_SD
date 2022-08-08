@@ -31,5 +31,21 @@ public class Menu {
         } else {
             System.out.println("NO HAY DATOS");
         }
+        
+        /*
+         if (!listaCompras.isEmpty() && listaCompras != null) {
+            System.out.println("DATOS DE LA COMPRA");
+            for (Compra compra : listaCompras) {
+                System.out.println("Id persona: " + compra.getNumIdPersona());
+                System.out.println("Tipo id: " + compra.getTipoIdPersona());
+                System.out.println("Valor compra: " + compra.getValorCompra());
+                System.out.println("Lugar compra: " + compra.getLugarCompra());
+                System.out.println("Fecha y hora: " + compra.getFechaHoraCompra());
+            }
+        } else {
+            System.out.println("NO HAY DATOS");
+        }
+        */
+        
     }
 }
