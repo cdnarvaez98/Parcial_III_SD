@@ -9,19 +9,17 @@ public class Compra {
     private String tipoIdPersona;
     private double valorCompra;
     private String lugarCompra;
-    private LocalDateTime fechaHoraCompra;
+    //private LocalDateTime fechaHoraCompra;
 
     public Compra() {
+        // Constructor de la clase
     }
 
-    public Compra(int numIdPersona, String tipoIdPersona, double valorCompra, String lugarCompra,
-            LocalDateTime fechaHoraCompra) {
-
+    public Compra(int numIdPersona, String tipoIdPersona, double valorCompra, String lugarCompra) {
         this.numIdPersona = numIdPersona;
         this.tipoIdPersona = tipoIdPersona;
         this.valorCompra = valorCompra;
         this.lugarCompra = lugarCompra;
-        this.fechaHoraCompra = fechaHoraCompra;
     }
 
     public int getNumIdPersona() {
@@ -55,13 +53,9 @@ public class Compra {
     public void setLugarCompra(String lugarCompra) {
         this.lugarCompra = lugarCompra;
     }
+    
 
-    public LocalDateTime getFechaHoraCompra() {
-        return fechaHoraCompra;
-    }
-
-    public void setFechaHoraCompra(LocalDateTime fechaHoraCompra) {
-        this.fechaHoraCompra = fechaHoraCompra;
-    }
+   
+   
 
 }

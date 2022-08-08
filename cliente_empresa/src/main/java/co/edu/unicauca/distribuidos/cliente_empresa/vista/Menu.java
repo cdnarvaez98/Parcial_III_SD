@@ -9,11 +9,13 @@ import co.edu.unicauca.distribuidos.cliente_empresa.servicios.ClienteServices;
  * La clase Menu consume los métodos de ClienteServices
  */
 public class Menu {
+
     public static void main(String[] args) {
 
         ClienteServices objClienteServices = new ClienteServices();
         System.out.println("Consultando compras para el id 1");
         List<Compra> objCompraConsultado = objClienteServices.consultarCompras(1);
+
         imprimirCompra(objCompraConsultado);
     }
 
@@ -26,26 +28,12 @@ public class Menu {
                 System.out.println("Tipo id: " + compra.getTipoIdPersona());
                 System.out.println("Valor compra: " + compra.getValorCompra());
                 System.out.println("Lugar compra: " + compra.getLugarCompra());
-                System.out.println("Fecha y hora: " + compra.getFechaHoraCompra());
+                //System.out.println("Fecha y hora: " + compra.getFechaHoraCompra());
             }
         } else {
             System.out.println("NO HAY DATOS");
         }
-        
-        /*
-         if (!listaCompras.isEmpty() && listaCompras != null) {
-            System.out.println("DATOS DE LA COMPRA");
-            for (Compra compra : listaCompras) {
-                System.out.println("Id persona: " + compra.getNumIdPersona());
-                System.out.println("Tipo id: " + compra.getTipoIdPersona());
-                System.out.println("Valor compra: " + compra.getValorCompra());
-                System.out.println("Lugar compra: " + compra.getLugarCompra());
-                System.out.println("Fecha y hora: " + compra.getFechaHoraCompra());
-            }
-        } else {
-            System.out.println("NO HAY DATOS");
-        }
-        */
-        
+
+       
     }
 }

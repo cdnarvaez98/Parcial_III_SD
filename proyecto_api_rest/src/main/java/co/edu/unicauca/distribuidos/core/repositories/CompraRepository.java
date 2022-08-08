@@ -65,8 +65,8 @@ public class CompraRepository {
     private void cargarCompra() {
 
         ArrayList<Compra> listC = new ArrayList<>();
-        Compra objCompra1 = new Compra(1, "CC", 4000000, "Medellin", LocalDateTime.now());
-        Compra objCompra2 = new Compra(2, "CE", 12000000, "Cali", LocalDateTime.now());
+        Compra objCompra1 = new Compra(1, "CC", 4000000, "Medellin");
+        Compra objCompra2 = new Compra(2, "CE", 12000000, "Cali");
 
         listC.add(objCompra1);
         listC.add(objCompra2);
