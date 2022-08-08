@@ -1,6 +1,7 @@
 package co.edu.unicauca.distribuidos.core.repositories;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -65,8 +66,11 @@ public class CompraRepository {
     private void cargarCompra() {
 
         ArrayList<Compra> listC = new ArrayList<>();
-        Compra objCompra1 = new Compra(1, "CC", 4000000, "Medellin");
-        Compra objCompra2 = new Compra(2, "CE", 12000000, "Cali");
+        LocalDateTime fechaHoraActual = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String fecha = fechaHoraActual.format(formato);
+        Compra objCompra1 = new Compra(1, "CC", 4000000, "Medellin", fecha);
+        Compra objCompra2 = new Compra(2, "CE", 12000000, "Cali", fecha);
 
         listC.add(objCompra1);
         listC.add(objCompra2);

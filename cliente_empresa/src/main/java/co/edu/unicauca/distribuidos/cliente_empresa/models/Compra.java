@@ -1,28 +1,27 @@
 package co.edu.unicauca.distribuidos.cliente_empresa.models;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
 /*
  * Clase Compra encapsula los datos que 
  * viajan entre el cliente y servidor
  */
+
 public class Compra {
     private int numIdPersona;
     private String tipoIdPersona;
     private double valorCompra;
     private String lugarCompra;
-    //private LocalDateTime fechaHoraCompra;
+    private String fechaHoraCompra;
 
     public Compra() {
         // Constructor de la clase
     }
 
-    public Compra(int numIdPersona, String tipoIdPersona, double valorCompra, String lugarCompra) {
+    public Compra(int numIdPersona, String tipoIdPersona, double valorCompra, String lugarCompra, String fechaHoraCompra) {
         this.numIdPersona = numIdPersona;
         this.tipoIdPersona = tipoIdPersona;
         this.valorCompra = valorCompra;
         this.lugarCompra = lugarCompra;
+        this.fechaHoraCompra = fechaHoraCompra;
     }
 
     public int getNumIdPersona() {
@@ -56,11 +55,13 @@ public class Compra {
     public void setLugarCompra(String lugarCompra) {
         this.lugarCompra = lugarCompra;
     }
-    
 
-   
-   
+    public String getFechaHoraCompra() {
+        return fechaHoraCompra;
+    }
 
-   
+    public void setFechaHoraCompra(String fechaHoraCompra) {
+        this.fechaHoraCompra = fechaHoraCompra;
+    }
 
 }

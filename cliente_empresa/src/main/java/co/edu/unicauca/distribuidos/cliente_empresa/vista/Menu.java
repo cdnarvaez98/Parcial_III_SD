@@ -28,12 +28,10 @@ public class Menu {
                 System.out.println("Tipo id: " + compra.getTipoIdPersona());
                 System.out.println("Valor compra: " + compra.getValorCompra());
                 System.out.println("Lugar compra: " + compra.getLugarCompra());
-                //System.out.println("Fecha y hora: " + compra.getFechaHoraCompra());
+                System.out.println("Fecha y hora: " + compra.getFechaHoraCompra());
             }
         } else {
             System.out.println("NO HAY DATOS");
         }
-
-       
     }
 }
